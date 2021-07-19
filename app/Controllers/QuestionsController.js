@@ -22,9 +22,9 @@ export default class QuestionsController {
             window.alert("Something went wrong: " + error)
         }
     }
-    async getButton(correct, result) {
+    async getButton(correct, name, result) {
         try {
-            await questionsService.getButton(correct, result)
+            await questionsService.getButton(correct, name, result)
         } catch (error) {
             window.alert("Something went wrong: " + error)
         }

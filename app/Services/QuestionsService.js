@@ -10,11 +10,17 @@ class QuestionsService {
         let question = res.data.results.map(q => new Question(q))
         ProxyState.questions = question
     }
-    async getButton(correct, result) {
+    async getButton(correct, name, result) {
+        let template = `
+                <button type = "button" class="btn btn-primary mr-2" disabled >True</button >
+                <button type="button" class="btn btn-primary" disabled>False</button>
+            `
         if (correct === result) {
-            console.log("Correct Answer!")
+            document.getElementById(name).innerText = "Correct Answer"
+            document.getElementById(`buttons-${name}`).innerHTML = template
         } else {
-            console.log("Wrong Answer!")
+            document.getElementById(name).innerText = "Incorrect Answer"
+            document.getElementById(`buttons-${name}`).innerHTML = template
         }
     }
 }
