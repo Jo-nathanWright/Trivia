@@ -9,7 +9,7 @@ export default class Question {
     get Template() {
         return `
             <div class="col-12 text-left mb-3">
-                <h2>${this.category}</h2>
+                <h3>${this.category}</h3>
                 <p><b>${this.question}</b></p>
                 <div class="row">
                     <div class="col-3 d-flex flex-row justify-content-start">
